@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const Workout = require("../models/Workout.js");
+const Workout = require('../models/Workout');
 
 router.post("/api/workouts", (req, res) => {
     Workout.create({})
@@ -49,7 +49,7 @@ router.get("/api/workouts/range", (req, res) => {
         });
 });
 
-router.put("/api/workouts/:id", async ({ body, params }, res) => {
+router.put("/api/workouts/:id", ({ body, params }, res) => {
     Workout.findByIdAndUpdate(
         params.id, 
         {
